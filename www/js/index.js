@@ -1,4 +1,3 @@
-
 var uuid_analytics = "UA-79840006-1";
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -47,21 +46,19 @@ var app = {
     }
 };
 
-
-
 // detectar si estamos dentro de la app o no
 var inCordova = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
 
 if (inCordova) {
     app.initialize();
-    }
+}
 else 
-    {
+{
     ga('create', uuid_analytics, 'auto');
-    }
+}
 
 // para llamar desde la app movil, sino va como auto
 window.touchAnalytics = function(page, title){
     app.addLog("touchAnalytics " + page + " -- " + title);
     ga('send', 'pageview', {'page': page,'title': title});
-  };
+};
